@@ -21,39 +21,36 @@ export default function CreateUser() {
     }
   };
 
-  return (
-    <div className="max-w-md mx-auto mt-10 p-4 border rounded shadow">
-      <h2 className="text-xl font-bold mb-4">Create New User</h2>
-      <form onSubmit={handleCreateUser}>
-        <div className="mb-4">
-          <label className="block mb-1">Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1">Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-        </div>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        {success && <p className="text-green-500 mb-4">{success}</p>}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Create User
-        </button>
-      </form>
-    </div>
-  );
+   return (
+     <div className="w-full max-w-sm mx-auto p-4 mt-4">
+       <h2 className="text-blue-300 text-bold text-center text-2xl">Create a new user</h2>
+       <form onSubmit={handleCreateUser}>
+         <div className="flex flex-col mb-4">
+           <label>Email</label>
+           <input
+             type="email"
+             value={email}
+             onChange={(e) => setEmail(e.target.value)}
+             className="border rounded p-1 mb-2"
+           />
+         </div>
+         <div className="flex flex-col mb-4">
+           <label>Password</label>
+           <input
+             type="password"
+             value={password}
+             onChange={(e) => setPassword(e.target.value)}
+             className="border rounded p-1 mb-2"
+           />
+         </div>
+         {error && <p style={{ color: "red" }}>{error}</p>}
+         <button
+           className="text-center w-full p-1 bg-blue-300 text-black font-bold rounded-full hover:cursor-pointer"
+           type="submit"
+         >
+           Create user
+         </button>
+       </form>
+     </div>
+   );
 }
