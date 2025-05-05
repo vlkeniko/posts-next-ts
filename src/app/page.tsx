@@ -1,7 +1,13 @@
-export default function Home() {
+
+import Login from "../components/login";
+
+export default function Entry() {
   return (
     <div className="container mx-auto">
-      <h1 className="text-xl font-bold text-center">Hello World</h1>
+      {/* Card Flex */}
+      <div className="flex flex-wrap justify-center">
+        <Login />
+      </div>
     </div>
   );
 }
